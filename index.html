@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anchorstone Holdings Ltd — Delivering Solutions. Powering Industry.</title>
+<meta name="description" content="Anchorstone Holdings Ltd is a Tanzanian business solutions and industrial supply company serving mining, energy, infrastructure, and industrial sectors.">
+<meta name="theme-color" content="#20242B">
+<meta property="og:title" content="Anchorstone Holdings Ltd">
+<meta property="og:description" content="Delivering Solutions. Powering Industry. Sourcing and supply for mining, energy, infrastructure, and industrial sectors in Tanzania.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anchorstone.co.tz/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+  :root{
+    --graphite:#20242B;
+    --graphite-card:#262B33;
+    --graphite-deep:#1A1E24;
+    --steel-white:#EEF0F2;
+    --body-ink:#3B434C;
+    --steel-slate:#6B7480;
+    --steel-blue:#5B7C99;
+    --steel-blue-deep:#3E5A73;
+    --steel-blue-light:#8CA3B8;
+    --hairline:#D7DBDF;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0; font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif; background:var(--steel-white); color:var(--graphite); overflow-x:hidden;}
+  a{color:inherit; text-decoration:none;}
+  a:hover{opacity:0.75;}
+  ::selection{background:#5B7C9933;}
+  img,svg{max-width:100%;}
+
+  .site-header{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; position:sticky; top:0; z-index:10; padding:20px clamp(20px,5vw,64px); background:#EEF0F2EE; backdrop-filter:blur(6px); border-bottom:1px solid var(--hairline);}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand span{font-weight:700; font-size:17px; letter-spacing:0.1em; text-transform:uppercase;}
+  .nav{display:flex; gap:clamp(16px,3vw,36px); flex-wrap:wrap; font-size:11.5px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;}
+
+  .hero{background:var(--graphite); color:var(--steel-white); padding:clamp(72px,12vw,140px) clamp(24px,6vw,64px) clamp(64px,10vw,120px); position:relative; overflow:hidden;}
+  .hero-mark{position:absolute; right:-60px; top:-40px; opacity:0.07;}
+  .hero-inner{max-width:760px; position:relative;}
+  .eyebrow{font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--steel-blue-light); margin-bottom:20px;}
+  .hero h1{font-weight:700; font-size:clamp(32px,5.5vw,56px); line-height:1.12; margin:0 0 24px; letter-spacing:-0.005em; text-transform:uppercase;}
+  .hero p{font-size:clamp(16px,2vw,19px); line-height:1.6; color:#B7BEC4; max-width:560px; margin:0 0 40px;}
+  .btn{display:inline-flex; align-items:center; gap:10px; background:var(--steel-blue-deep); color:var(--steel-white); font-weight:600; font-size:15px; padding:16px 28px; border:none; cursor:pointer;}
+  .btn-outline{border:1px solid #454D57; background:transparent; color:var(--steel-white); font-weight:600; font-size:15px; padding:16px 32px;}
+
+  section{padding:clamp(64px,9vw,120px) clamp(24px,6vw,64px);}
+  .about-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:clamp(32px,6vw,80px); align-items:start;}
+  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} }
+  .about-head h2{font-weight:700; font-size:clamp(26px,3.6vw,38px); line-height:1.2; margin:0;}
+  .about-body p{font-size:17px; line-height:1.7; color:var(--body-ink); margin:0 0 40px; max-width:620px;}
+  .pillar-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:28px;}
+  .pillar{border-top:1px solid var(--hairline); padding-top:16px;}
+  .pillar-title{font-weight:600; font-size:15px; margin:12px 0 6px;}
+  .pillar-desc{font-size:13.5px; color:var(--steel-slate); line-height:1.5;}
+
+  .services{background:var(--graphite); color:var(--steel-white);}
+  .services-head{max-width:640px; margin:0 0 56px;}
+  .services-head .eyebrow{color:var(--steel-blue-light);}
+  .services-head h2{font-weight:700; font-size:clamp(24px,3.4vw,34px); line-height:1.25; margin:0;}
+  .card-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px;}
+  .card{border:1px solid #343B44; background:var(--graphite-card); padding:28px 24px;}
+  .card-title{font-weight:600; font-size:16.5px; margin:18px 0 8px;}
+  .card-desc{font-size:14px; line-height:1.6; color:#A9AFB6;}
+
+  .sectors{padding-top:clamp(48px,7vw,80px); padding-bottom:clamp(48px,7vw,80px);}
+  .sectors-head{max-width:640px; margin:0 0 8px;}
+  .sector-band{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);}
+  .sector-item{padding:32px 20px; border-left:1px solid var(--hairline);}
+  .sector-item:first-child{border-left:none;}
+  @media (max-width:640px){ .sector-item{border-left:none; border-top:1px solid var(--hairline);} .sector-item:first-child{border-top:none;} }
+  .sector-title{font-weight:600; font-size:15px; margin:14px 0 6px;}
+  .sector-desc{font-size:13.5px; color:var(--steel-slate); line-height:1.5;}
+
+  .pull{max-width:780px; margin:0 auto;}
+  .pull-rule{width:48px; height:2px; background:var(--steel-blue); margin-bottom:28px;}
+  .pull p:first-of-type{font-weight:700; font-size:clamp(22px,3vw,30px); line-height:1.4; color:var(--graphite); margin:0 0 24px;}
+  .pull p:last-of-type{font-size:16px; line-height:1.7; color:var(--body-ink); margin:0; max-width:640px;}
+
+  .contact{background:var(--graphite); color:var(--steel-white); text-align:center;}
+  .contact-inner{max-width:640px; margin:0 auto;}
+  .contact h2{font-weight:700; font-size:clamp(26px,3.6vw,38px); margin:0 0 20px; line-height:1.25;}
+  .contact p{font-size:16px; line-height:1.6; color:#B7BEC4; margin:0 0 40px;}
+  .contact-actions{display:flex; flex-wrap:wrap; gap:16px; justify-content:center; margin-bottom:44px;}
+  .contact-address{font-size:13.5px; color:#8A929B; letter-spacing:0.02em;}
+
+  .site-footer{padding:32px clamp(24px,6vw,64px); display:flex; flex-wrap:wrap; gap:16px; align-items:center; justify-content:space-between; background:var(--graphite-deep); color:#7B8590; font-size:13px;}
+  .site-footer .brand span{font-size:14px;}
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <svg width="28" height="28" viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="#5B7C99" stroke-width="6" stroke-linejoin="round"/>
+        <line x1="14" y1="50" x2="86" y2="50" stroke="#5B7C99" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <span>Anchorstone</span>
+    </div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#services">What We Do</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <svg class="hero-mark" width="440" height="440" viewBox="0 0 100 100" aria-hidden="true">
+      <polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="#5B7C99" stroke-width="4"/>
+      <line x1="14" y1="50" x2="86" y2="50" stroke="#5B7C99" stroke-width="4"/>
+    </svg>
+    <div class="hero-inner">
+      <div class="eyebrow">Tanzanian Industrial Supply &amp; Business Solutions</div>
+      <h1>Delivering Solutions.<br>Powering Industry.</h1>
+      <p>We source and deliver mining equipment, industrial products, safety and security solutions, and energy products — through a trusted supplier network built for Tanzania's mining, energy, infrastructure, and industrial sectors.</p>
+      <a href="#contact" class="btn">
+        Talk to Our Team
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#EEF0F2" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-head">
+        <div class="eyebrow" style="color:var(--steel-blue-deep);">Our Promise</div>
+        <h2>Reliable, quality-driven, and built for Tanzanian industry.</h2>
+      </div>
+      <div class="about-body">
+        <p>Anchorstone Holdings Ltd works with businesses across Tanzania to source and deliver mining equipment, industrial products, safety and security solutions, and energy-related products — through a network of trusted suppliers. We focus on the practical needs of our clients while supporting local content, responsible procurement, and the growth of Tanzania's industrial economy.</p>
+        <div class="pillar-grid">
+          <div class="pillar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="pillar-title">Reliable &amp; Quality-Driven</div>
+            <div class="pillar-desc">Consistent delivery you can plan around.</div>
+          </div>
+          <div class="pillar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><path d="M11 3h5a2 2 0 0 1 2 2v5a2 2 0 0 1-.6 1.4l-8 8a2 2 0 0 1-2.8 0l-5-5a2 2 0 0 1 0-2.8l8-8A2 2 0 0 1 11 3z" stroke-linejoin="round"/><circle cx="15" cy="8" r="1.2" fill="#5B7C99" stroke="none"/></svg>
+            <div class="pillar-title">Cost-Effective</div>
+            <div class="pillar-desc">Fair pricing without compromising quality.</div>
+          </div>
+          <div class="pillar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.4"/></svg>
+            <div class="pillar-title">Local Content</div>
+            <div class="pillar-desc">Invested in Tanzania's industrial economy.</div>
+          </div>
+          <div class="pillar">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><circle cx="5" cy="6" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7 7l4 9M17 7l-4 9M7.2 6h9.6" stroke-linecap="round"/></svg>
+            <div class="pillar-title">Trusted Network</div>
+            <div class="pillar-desc">A vetted network of reliable suppliers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="services-head">
+      <div class="eyebrow">What We Do</div>
+      <h2>Sourcing and supply for operations that can't afford downtime.</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><path d="M4 12h4l3-7 4 14 3-7h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="card-title">Sourcing &amp; Procurement</div>
+        <div class="card-desc">Connecting your operation to a vetted supplier network — from request to delivery.</div>
+      </div>
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><path d="M3 19l6-10 4 5 3-4 5 9H3z" stroke-linejoin="round"/></svg>
+        <div class="card-title">Mining Equipment &amp; Supplies</div>
+        <div class="card-desc">Equipment, parts, and consumables sourced and delivered for mining operations.</div>
+      </div>
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><path d="M4 8l8-4 8 4-8 4-8-4z" stroke-linejoin="round"/><path d="M4 8v9l8 4 8-4V8" stroke-linejoin="round"/><path d="M12 12v9" stroke-linecap="round"/></svg>
+        <div class="card-title">Industrial Products</div>
+        <div class="card-desc">Operational materials and industrial goods for infrastructure and manufacturing.</div>
+      </div>
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round"/></svg>
+        <div class="card-title">Safety &amp; Security Solutions</div>
+        <div class="card-desc">Protective equipment and security products built for industrial sites.</div>
+      </div>
+      <div class="card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <div class="card-title">Energy Products</div>
+        <div class="card-desc">Products and materials supporting energy generation, distribution, and operations.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sectors" class="sectors">
+    <div class="sectors-head">
+      <div class="eyebrow" style="color:var(--steel-blue-deep);">Sectors We Serve</div>
+    </div>
+    <div class="sector-band">
+      <div class="sector-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#20242B" stroke-width="1.6"><path d="M3 19l6-10 4 5 3-4 5 9H3z" stroke-linejoin="round"/></svg>
+        <div class="sector-title">Mining</div>
+        <div class="sector-desc">Equipment, supplies, and safety solutions for mine sites.</div>
+      </div>
+      <div class="sector-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#20242B" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        <div class="sector-title">Energy</div>
+        <div class="sector-desc">Products and materials for generation and distribution.</div>
+      </div>
+      <div class="sector-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#20242B" stroke-width="1.6"><path d="M6 21V7l6-4 6 4v14" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linejoin="round"/></svg>
+        <div class="sector-title">Infrastructure</div>
+        <div class="sector-desc">Materials and equipment for infrastructure projects.</div>
+      </div>
+      <div class="sector-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#20242B" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke-linecap="round"/></svg>
+        <div class="sector-title">Industrial</div>
+        <div class="sector-desc">Operational supplies for manufacturing and industry.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="pull">
+      <div class="pull-rule"></div>
+      <p>Industry in Tanzania deserves a supply partner it can rely on.</p>
+      <p>We focus on the practical needs of our clients — quality products, fair costs, and dependable delivery — while supporting local content, responsible procurement, and the growth of Tanzania's industrial economy.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="contact-inner">
+      <h2>Let's talk about what your operation needs.</h2>
+      <p>Reach out to discuss sourcing, supply, or a project requirement.</p>
+      <div class="contact-actions">
+        <a href="mailto:info@anchorstone.co.tz" class="btn">Email Us</a>
+        <a href="tel:+255741111105" class="btn-outline">Call +255 741 111 105</a>
+      </div>
+      <div class="contact-address">1620 Oysterbay, Dar es Salaam, Tanzania</div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="brand">
+      <svg width="18" height="18" viewBox="0 0 100 100" aria-hidden="true">
+        <polygon points="50,4 90,27 90,73 50,96 10,73 10,27" fill="none" stroke="#5B7C99" stroke-width="7"/>
+        <line x1="14" y1="50" x2="86" y2="50" stroke="#5B7C99" stroke-width="7"/>
+      </svg>
+      <span>Anchorstone Holdings Ltd</span>
+    </div>
+    <div>&copy; 2026 Anchorstone Holdings Ltd. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
