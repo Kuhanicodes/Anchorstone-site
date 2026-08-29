@@ -113,7 +113,15 @@
   .quote-form input:focus, .quote-form select:focus, .quote-form textarea:focus{outline:1px solid var(--steel-blue-light);}
   .quote-form textarea{resize:vertical; min-height:88px;}
   .quote-form .btn{margin-top:6px; justify-self:start;}
+  .quote-form .btn[disabled]{opacity:0.6; cursor:not-allowed;}
   .quote-note{font-size:11.5px; color:#7B8590; margin-top:14px; line-height:1.6;}
+  .quote-error{font-size:13px; color:#D98C8C; margin-top:14px; line-height:1.6;}
+  .quote-error a{text-decoration:underline;}
+
+  .quote-success{border:1px solid #343B44; background:var(--graphite-card); padding:32px 28px;}
+  .quote-success-title{font-weight:600; font-size:16.5px; color:var(--steel-white); margin:14px 0 8px;}
+  .quote-success p{font-size:14px; line-height:1.6; color:#A9AFB6; margin:0;}
+  .quote-success a{text-decoration:underline;}
 
   .contact-direct{border-top:1px solid #343B44; padding-top:28px; margin-top:8px;}
   @media (min-width:801px){ .contact-direct{border-top:none; border-left:1px solid #343B44; padding-top:0; padding-left:clamp(32px,4vw,48px); margin-top:0;} }
@@ -331,7 +339,7 @@
     </div>
     <div class="contact-grid">
       <div>
-        <form class="quote-form" action="https://formspree.io/f/xzebzbpl" method="POST">
+        <form id="quote-form" class="quote-form" action="https://formspree.io/f/xzebzbpl" method="POST">
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="_subject" value="New enquiry: Anchorstone website">
 
@@ -380,9 +388,15 @@
           </div>
           <div class="field-full">
             <button type="submit" class="btn">Submit Enquiry</button>
+            <div id="quote-error" class="quote-error" hidden>Something went wrong sending your enquiry. Please try again, or email us directly at <a href="mailto:info@anchorstone.co.tz">info@anchorstone.co.tz</a>.</div>
             <div class="quote-note">We typically respond within one business day.</div>
           </div>
         </form>
+        <div id="quote-success" class="quote-success" hidden>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5B7C99" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="quote-success-title">Thanks, we've received your enquiry.</div>
+          <p>Our team typically responds within one business day. For anything urgent, call <a href="tel:+255741111105">+255 741 111 105</a>.</p>
+        </div>
       </div>
       <div class="contact-direct">
         <div class="contact-direct-label">Direct Contact</div>
@@ -405,6 +419,39 @@
     </div>
     <div>&copy; 2026 Anchorstone Holdings Ltd. All rights reserved.</div>
   </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('quote-form');
+      if (!form) return;
+      var success = document.getElementById('quote-success');
+      var error = document.getElementById('quote-error');
+      var submitBtn = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        error.hidden = true;
+        submitBtn.disabled = true;
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        }).then(function (response) {
+          if (response.ok) {
+            form.hidden = true;
+            success.hidden = false;
+          } else {
+            error.hidden = false;
+            submitBtn.disabled = false;
+          }
+        }).catch(function () {
+          error.hidden = false;
+          submitBtn.disabled = false;
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>
