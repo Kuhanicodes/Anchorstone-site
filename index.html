@@ -53,6 +53,8 @@
   .about-grid{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); gap:clamp(32px,6vw,80px); align-items:start;}
   @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} }
   .about-head h2{font-weight:700; font-size:clamp(26px,3.6vw,38px); line-height:1.2; margin:0;}
+  .about-visual{width:100%; height:420px; object-fit:cover; display:block; margin:28px 0 0;}
+  @media (max-width:760px){ .about-visual{height:280px; margin-top:20px;} }
   .about-body p{font-size:17px; line-height:1.7; color:var(--body-ink); margin:0 0 40px; max-width:620px;}
   .pillar-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:28px;}
   .pillar{border-top:1px solid var(--hairline); padding-top:16px;}
@@ -179,6 +181,7 @@
       <div class="about-head">
         <div class="eyebrow" style="color:var(--steel-blue-deep);">Why Anchorstone</div>
         <h2>A sourcing and solutions partner your operation can build on.</h2>
+        <img class="about-visual" src="images/about-partner.jpg" alt="Anchorstone team reviewing project and procurement plans on site">
       </div>
       <div class="about-body">
         <p>Anchorstone Holdings Ltd works with businesses across Tanzania to solve procurement problems, not just fill orders, sourcing mining equipment, industrial products, safety and security solutions, and energy-related products through a vetted supplier network built for the country's mining, energy, infrastructure, and industrial sectors.</p>
