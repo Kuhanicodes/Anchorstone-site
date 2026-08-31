@@ -81,14 +81,12 @@
   .mining-sub-title{font-weight:600; font-size:14.5px; margin:12px 0 4px;}
   .mining-sub-desc{font-size:12.5px; color:var(--steel-slate); line-height:1.5;}
 
-  .solutions{padding-top:clamp(48px,7vw,80px); padding-bottom:clamp(48px,7vw,80px);}
-  .solutions-head{max-width:640px; margin:0 0 8px;}
-  .sector-band{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);}
-  .sector-item{padding:32px 20px; border-left:1px solid var(--hairline);}
-  .sector-item:first-child{border-left:none;}
-  @media (max-width:640px){ .sector-item{border-left:none; border-top:1px solid var(--hairline);} .sector-item:first-child{border-top:none;} }
-  .sector-title{font-weight:600; font-size:15px; margin:14px 0 6px;}
-  .sector-desc{font-size:13.5px; color:var(--steel-slate); line-height:1.5;}
+  .mining-procurement{background:var(--graphite); width:100vw; position:relative; left:50%; margin-left:-50vw; margin-top:36px; text-decoration:none; display:flex; align-items:center; gap:22px; flex-wrap:wrap; padding:28px clamp(24px,6vw,64px);}
+  .mining-procurement-body{flex:1; min-width:220px;}
+  .mining-procurement-title{font-weight:600; font-size:16px; color:var(--steel-white); margin-bottom:4px;}
+  .mining-procurement-desc{font-size:13.5px; color:#B7BEC4; line-height:1.5;}
+  .mining-procurement-cta{flex:none; font-weight:600; font-size:13.5px; color:var(--steel-blue-light); white-space:nowrap;}
+  .mining-procurement:hover .mining-procurement-cta{color:var(--steel-white);}
 
   .pull{max-width:780px; margin:0 auto;}
   .pull-rule{width:48px; height:2px; background:var(--steel-blue); margin-bottom:28px;}
@@ -151,7 +149,6 @@
       <a href="#about">Why Us</a>
       <a href="#services">Services</a>
       <a href="#mining">Mining</a>
-      <a href="#solutions">Solutions</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -264,7 +261,7 @@
   <section id="mining" class="mining">
     <div class="mining-grid">
       <div>
-        <div class="mining-label">Core Sector Focus</div>
+        <div class="mining-label">Our Focus</div>
         <h2>Mining &amp; Minerals</h2>
         <p class="mining-intro">Anchorstone supports mining operations with reliable sourcing and supply of equipment, components, consumables, safety products, and operational requirements across the mining value chain.</p>
         <a href="#contact" class="btn" style="background:var(--steel-blue-deep); color:var(--steel-white);">Discuss a Mining Requirement</a>
@@ -272,60 +269,44 @@
       <div class="mining-sub-grid">
         <div class="mining-sub">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M3 19l6-10 4 5 3-4 5 9H3z" stroke-linejoin="round"/></svg>
-          <div class="mining-sub-title">Mining Equipment</div>
-          <div class="mining-sub-desc">Machinery, tooling, and parts for site operations.</div>
-        </div>
-        <div class="mining-sub">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M4 8l8-4 8 4-8 4-8-4z" stroke-linejoin="round"/><path d="M4 8v9l8 4 8-4V8" stroke-linejoin="round"/></svg>
-          <div class="mining-sub-title">Processing &amp; Recovery</div>
-          <div class="mining-sub-desc">Equipment and consumables for processing and recovery operations.</div>
+          <div class="mining-sub-title">Mining Equipment &amp; Consumables</div>
+          <div class="mining-sub-desc">Machinery, tooling, parts, and ongoing consumables for site operations.</div>
         </div>
         <div class="mining-sub">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round"/></svg>
-          <div class="mining-sub-title">PPE &amp; Safety</div>
+          <div class="mining-sub-title">PPE &amp; Safety Solutions</div>
           <div class="mining-sub-desc">Protective equipment and safety products for site personnel.</div>
         </div>
         <div class="mining-sub">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke-linecap="round"/></svg>
-          <div class="mining-sub-title">Mechanical &amp; Electrical</div>
-          <div class="mining-sub-desc">Components and products supporting mechanical and electrical systems.</div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M4 8l8-4 8 4-8 4-8-4z" stroke-linejoin="round"/><path d="M4 8v9l8 4 8-4V8" stroke-linejoin="round"/></svg>
+          <div class="mining-sub-title">Industrial Equipment</div>
+          <div class="mining-sub-desc">Machinery and process equipment for industrial and processing operations.</div>
         </div>
         <div class="mining-sub">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M4 12h4l3-7 4 14 3-7h4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <div class="mining-sub-title">Consumables</div>
-          <div class="mining-sub-desc">Ongoing operational consumables, sourced and resupplied reliably.</div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke-linecap="round"/></svg>
+          <div class="mining-sub-title">Electrical &amp; Mechanical</div>
+          <div class="mining-sub-desc">Components and products supporting electrical and mechanical systems.</div>
+        </div>
+        <div class="mining-sub">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          <div class="mining-sub-title">Energy Solutions</div>
+          <div class="mining-sub-desc">Products and equipment supporting power and energy requirements.</div>
         </div>
         <div class="mining-sub">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M6 21V7l6-4 6 4v14" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linejoin="round"/></svg>
-          <div class="mining-sub-title">Site &amp; Camp Supplies</div>
-          <div class="mining-sub-desc">Operational and camp supplies to keep a site running.</div>
+          <div class="mining-sub-title">Site &amp; Operational Supplies</div>
+          <div class="mining-sub-desc">Operational supplies to keep a site running.</div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section id="solutions" class="solutions">
-    <div class="solutions-head">
-      <div class="eyebrow" style="color:var(--steel-blue-deep);">Our Solutions</div>
-      <p style="font-size:14.5px; color:var(--steel-slate); margin:0;">Beyond mining, we support:</p>
-    </div>
-    <div class="sector-band">
-      <div class="sector-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#20242B" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke-linecap="round"/></svg>
-        <div class="sector-title">Industrial</div>
-        <div class="sector-desc">Operational supplies for manufacturing and industry.</div>
+    <a href="#contact" class="mining-procurement">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8CA3B8" stroke-width="1.6"><circle cx="5" cy="6" r="2.2"/><circle cx="19" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M7 7l4 9M17 7l-4 9M7.2 6h9.6" stroke-linecap="round"/></svg>
+      <div class="mining-procurement-body">
+        <div class="mining-procurement-title">Project Procurement &amp; Supply</div>
+        <div class="mining-procurement-desc">End-to-end procurement, logistics and supply-chain solutions customized for your projects.</div>
       </div>
-      <div class="sector-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#20242B" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round" stroke-linecap="round"/></svg>
-        <div class="sector-title">Energy</div>
-        <div class="sector-desc">Products and materials for generation and distribution.</div>
-      </div>
-      <div class="sector-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#20242B" stroke-width="1.6"><path d="M6 21V7l6-4 6 4v14" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linejoin="round"/></svg>
-        <div class="sector-title">Infrastructure</div>
-        <div class="sector-desc">Materials and equipment for infrastructure projects.</div>
-      </div>
-    </div>
+      <span class="mining-procurement-cta">Find Out More &rarr;</span>
+    </a>
   </section>
 
   <section>
