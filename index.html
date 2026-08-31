@@ -39,7 +39,7 @@
   .brand span{font-weight:700; font-size:17px; letter-spacing:0.1em; text-transform:uppercase;}
   .nav{display:flex; gap:clamp(14px,2.6vw,32px); flex-wrap:wrap; font-size:11.5px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;}
 
-  .hero{background:var(--graphite); color:var(--steel-white); padding:clamp(72px,12vw,140px) clamp(24px,6vw,64px) clamp(64px,10vw,120px); position:relative; overflow:hidden;}
+  .hero{background:linear-gradient(100deg, rgba(20,23,28,0.94) 0%, rgba(20,23,28,0.72) 45%, rgba(20,23,28,0.4) 100%), url('images/hero-mining.jpg'); background-size:cover; background-position:center 40%; color:var(--steel-white); padding:clamp(72px,12vw,140px) clamp(24px,6vw,64px) clamp(64px,10vw,120px); position:relative; overflow:hidden;}
   .hero-mark{position:absolute; right:-60px; top:-40px; opacity:0.07;}
   .hero-inner{max-width:760px; position:relative;}
   .eyebrow{font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--steel-blue-light); margin-bottom:20px;}
@@ -76,10 +76,14 @@
   .mining-label::before{content:""; width:22px; height:2px; background:var(--steel-blue); display:inline-block;}
   .mining h2{font-weight:700; font-size:clamp(26px,3.4vw,36px); line-height:1.2; margin:0 0 18px;}
   .mining-intro{font-size:16px; line-height:1.7; color:var(--body-ink); max-width:520px; margin:0 0 28px;}
+  .mining-visual{width:100%; max-width:480px; height:200px; object-fit:cover; display:block; margin:0 0 28px;}
   .mining-sub-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px;}
-  .mining-sub{border:1px solid var(--hairline); background:#FFFFFF; padding:20px;}
-  .mining-sub-title{font-weight:600; font-size:14.5px; margin:12px 0 4px;}
-  .mining-sub-desc{font-size:12.5px; color:var(--steel-slate); line-height:1.5;}
+  .mining-sub{position:relative; overflow:hidden; min-height:224px; padding:18px; display:flex; flex-direction:column; justify-content:flex-end; background-size:cover; background-position:center; border:none;}
+  .mining-sub::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(20,23,28,0.05) 0%, rgba(20,23,28,0.92) 100%);}
+  .mining-sub > *{position:relative;}
+  .mining-sub svg{stroke:var(--steel-white);}
+  .mining-sub-title{font-weight:600; font-size:14.5px; margin:12px 0 4px; color:var(--steel-white);}
+  .mining-sub-desc{font-size:12.5px; color:#C7CDD3; line-height:1.5;}
 
   .mining-procurement{background:var(--graphite); width:100vw; position:relative; left:50%; margin-left:-50vw; margin-top:36px; text-decoration:none; display:flex; align-items:center; gap:22px; flex-wrap:wrap; padding:28px clamp(24px,6vw,64px);}
   .mining-procurement-body{flex:1; min-width:220px;}
@@ -264,35 +268,36 @@
         <div class="mining-label">Our Focus</div>
         <h2>Mining &amp; Minerals</h2>
         <p class="mining-intro">Anchorstone supports mining operations with reliable sourcing and supply of equipment, components, consumables, safety products, and operational requirements across the mining value chain.</p>
+        <img src="images/tile-mining-minerals.jpg" alt="Mineral processing and conveyor operations" class="mining-visual">
         <a href="#contact" class="btn" style="background:var(--steel-blue-deep); color:var(--steel-white);">Discuss a Mining Requirement</a>
       </div>
       <div class="mining-sub-grid">
-        <div class="mining-sub">
+        <div class="mining-sub" style="background-image:url('images/tile-mining-equipment.jpg')">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M3 19l6-10 4 5 3-4 5 9H3z" stroke-linejoin="round"/></svg>
           <div class="mining-sub-title">Mining Equipment &amp; Consumables</div>
           <div class="mining-sub-desc">Machinery, tooling, parts, and ongoing consumables for site operations.</div>
         </div>
-        <div class="mining-sub">
+        <div class="mining-sub" style="background-image:url('images/tile-ppe-safety.jpg')">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke-linejoin="round"/></svg>
           <div class="mining-sub-title">PPE &amp; Safety Solutions</div>
           <div class="mining-sub-desc">Protective equipment and safety products for site personnel.</div>
         </div>
-        <div class="mining-sub">
+        <div class="mining-sub" style="background-image:url('images/tile-industrial-equipment.jpg')">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M4 8l8-4 8 4-8 4-8-4z" stroke-linejoin="round"/><path d="M4 8v9l8 4 8-4V8" stroke-linejoin="round"/></svg>
           <div class="mining-sub-title">Industrial Equipment</div>
           <div class="mining-sub-desc">Machinery and process equipment for industrial and processing operations.</div>
         </div>
-        <div class="mining-sub">
+        <div class="mining-sub" style="background-image:url('images/tile-electrical-mechanical.jpg')">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke-linecap="round"/></svg>
           <div class="mining-sub-title">Electrical &amp; Mechanical</div>
           <div class="mining-sub-desc">Components and products supporting electrical and mechanical systems.</div>
         </div>
-        <div class="mining-sub">
+        <div class="mining-sub" style="background-image:url('images/tile-energy-solutions.jpg')">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round" stroke-linecap="round"/></svg>
           <div class="mining-sub-title">Energy Solutions</div>
           <div class="mining-sub-desc">Products and equipment supporting power and energy requirements.</div>
         </div>
-        <div class="mining-sub">
+        <div class="mining-sub" style="background-image:url('images/tile-site-operational-supplies.jpg')">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3E5A73" stroke-width="1.6"><path d="M6 21V7l6-4 6 4v14" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke-linejoin="round"/></svg>
           <div class="mining-sub-title">Site &amp; Operational Supplies</div>
           <div class="mining-sub-desc">Operational supplies to keep a site running.</div>
